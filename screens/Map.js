@@ -1,4 +1,4 @@
-import MapView, { Marker } from "react-native-maps";
+import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import { Alert, StyleSheet } from "react-native";
 import { useCallback, useLayoutEffect, useState } from "react";
 
@@ -52,6 +52,7 @@ function Map({ navigation }) {
 
   return (
     <MapView
+      provider={PROVIDER_GOOGLE}
       style={styles.map}
       initialRegion={region}
       onPress={selectLocationHandler}
