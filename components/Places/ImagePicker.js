@@ -9,7 +9,7 @@ import { useState } from "react";
 import { Colors } from "../../constants/colors";
 import OutlinedButton from "../UI/OutlinedButton";
 
-function ImagePicker() {
+function ImagePicker({ onTakeImage }) {
   const [pickedImage, setPickedImage] = useState();
 
   // iOS 카메라 권한 부여
@@ -47,6 +47,7 @@ function ImagePicker() {
       quality: 0.5,
     });
     setPickedImage(image.assets[0].uri);
+    onTakeImage(image.assets[0].uri);
     console.log(image.assets[0].uri);
   }
 
