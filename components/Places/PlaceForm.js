@@ -21,7 +21,7 @@ function PlaceForm() {
 
   const pickLocationHandler = useCallback((location) => {
     setPickedLocation(location);
-  });
+  }, []);
 
   function savePlaceHandler() {
     console.log(enteredTitle);
