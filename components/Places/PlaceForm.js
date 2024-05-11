@@ -13,7 +13,7 @@ function PlaceForm({ onCreatePlace }) {
   const [pickedLocation, setPickedLocation] = useState();
 
   function changeTitleHandler(enteredText) {
-    setEnteredTitle(enteredTitle);
+    setEnteredTitle(enteredText);
   }
 
   function takeImageHandler(imageUri) {
@@ -25,7 +25,9 @@ function PlaceForm({ onCreatePlace }) {
   }, []);
 
   function savePlaceHandler() {
+    console.log(enteredTitle, selectedImage, pickedLocation);
     const placeData = new Place(enteredTitle, selectedImage, pickedLocation);
+    console.log("placeData", placeData);
     onCreatePlace(placeData);
   }
 
